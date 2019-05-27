@@ -24,14 +24,14 @@
       <div class="inner">
         <h1>You might <span class="highlighted">no</span>t need <span class="highlighted">jQuery</span></h1>
       </div>
-      <div class="old-ie-message">You certainly can support IE 9 and below without jQuery, but we don't. Please stop messing with us.</div>
+      <div class="old-ie-message">You certainly can support IE 9 and below without jQuery, but we don't.  Please stop messing with us.</div>
     </header>
     <div class="explanation">
       <div class="inner">
         <p>jQuery and its cousins are great, and by all means use them if it makes it easier to develop your application.</p>
         <p>
           If you're developing a library on the other hand, please take a moment to consider if you actually need jQuery as a dependency.
-          Maybe you can include a few lines of utility code, and forgot the requirement. If you're only targeting more modern browsers,
+          Maybe you can include a few lines of utility code, and forgo the requirement.  If you're only targeting more modern browsers,
           you might not need anything more than what the browser ships with.
         </p>
         <p>
@@ -41,20 +41,12 @@
         </p>
       </div>
     </div>
-    <div class="share-buttons">
-      <div class="share-button twitter-share-button">
-        <iframe src="http://hubstar.io/twitter/spin?via=HubSpotDev&amp;text=You%20might%20not%20need%20jQuery&amp;url=http://YouMightNotNeedjQuery.com&amp;name=%22You%20might%20not%20need%20jQuery%22" frameborder="0" scrolling="0"></iframe>
-      </div>
-      <div class="share-button github-stars-button">
-        <iframe src="http://hubstar.io/github/spin/HubSpot/YouMightNotNeedjQuery" frameborder="0" scrolling="0"></iframe>
-      </div>
-    </div>
     <header class="search">
       <input type="search" placeholder="Search..." required>
       <div class="field">
         <label for="version">What's the oldest version of IE you need to support?</label>
         <div class="slider">
-          <input name="version" id="version" type="range" min="8" max="10" class="version-slider">
+          <input name="version" id="version" type="range" min="8" max="10" value="10" class="version-slider">
           <div class="rule">
             <div class="range-label">8</div>
             <div class="range-label">9</div>
@@ -71,9 +63,7 @@
           <div class="alternatives-block">
             <h4>Alternatives:</h4>
             <ul class="alternatives">
-              <li><a href=" https://github.com/ded/Reqwest" target="_blank">reqwest</a></li>
-              <li><a href=" https://github.com/then/request" target="_blank">then-request</a></li>
-              <li><a href=" https://github.com/visionmedia/superagent" target="_blank">superagent</a></li>
+              <li><a href="//github.com/github/fetch" target="_blank">fetch https</a></li>
             </ul>
           </div>
           <div id="json" class="comparison">
@@ -662,23 +652,6 @@ filter(selector, filterFn);
               </div>
             </div>
           </div>
-          <div id="find_children" class="comparison">
-            <h3><a href="#find_children">Find Children</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$(el).find(selector);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.querySelectorAll(selector);
-</code></pre>
-              </div>
-            </div>
-          </div>
           <div id="find_elements" class="comparison">
             <h3><a href="#find_elements">Find Elements</a></h3>
             <div class="alternatives-block">
@@ -826,6 +799,23 @@ else
               <h4>IE10+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
                 <pre><code>el.classList.contains(className);
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="find_children" class="comparison">
+            <h3><a href="#find_children">Find Children</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$(el).find(selector);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.querySelectorAll(selector);
 </code></pre>
               </div>
             </div>
@@ -1193,6 +1183,23 @@ el.previousElementSibling || previousElementSibling(el);
               </div>
             </div>
           </div>
+          <div id="remove_attributes" class="comparison">
+            <h3><a href="#remove_attributes">Remove Attributes</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$(el).removeAttr('tabindex');
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.removeAttribute('tabindex');
+</code></pre>
+              </div>
+            </div>
+          </div>
           <div id="remove_class" class="comparison">
             <h3><a href="#remove_class">Remove Class</a></h3>
             <div data-browser="jquery" class="browser jquery">
@@ -1511,7 +1518,7 @@ addEventListener(el, eventName, handler);
               <h4>IE9+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
                 <pre><code>function ready(fn) {
-  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+  if (document.readyState != 'loading'){
     fn();
   } else {
     document.addEventListener('DOMContentLoaded', fn);
@@ -1601,30 +1608,6 @@ el.dispatchEvent(event);
       <section id="utils" class="odd">
         <div class="inner">
           <h2>Utils</h2>
-          <div id="bind" class="comparison">
-            <h3><a href="#bind">Bind</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$.proxy(fn, context);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>fn.apply(context, arguments);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie9" class="browser ie9">
-              <h4>IE9+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>fn.bind(context);
-</code></pre>
-              </div>
-            </div>
-          </div>
           <div id="array_each" class="comparison">
             <h3><a href="#array_each">Array Each</a></h3>
             <div data-browser="jquery" class="browser jquery">
@@ -1656,6 +1639,30 @@ forEach(array, function(item, i){
                 <pre><code>array.forEach(function(item, i){
 
 });
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="bind" class="comparison">
+            <h3><a href="#bind">Bind</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$.proxy(fn, context);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>fn.apply(context, arguments);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie9" class="browser ie9">
+              <h4>IE9+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>fn.bind(context);
 </code></pre>
               </div>
             </div>
