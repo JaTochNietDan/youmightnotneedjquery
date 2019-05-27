@@ -107,6 +107,10 @@ header.page-header .inner h1 {
   padding: 0 1em;
   margin: auto;
   text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 .explanation .inner {
   font-size: 1.1em;
