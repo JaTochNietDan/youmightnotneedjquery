@@ -269,23 +269,6 @@ request.send();
       <section id="effects">
         <div class="inner">
           <h2>EFEITOS</h2>
-          <div id="hide" class="comparison">
-            <h3><a href="#hide">Hide</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$(el).hide();
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.style.display = 'none';
-</code></pre>
-              </div>
-            </div>
-          </div>
           <div id="fade_in" class="comparison">
             <h3><a href="#fade_in">Fade In</a></h3>
             <div data-browser="jquery" class="browser jquery">
@@ -361,6 +344,23 @@ el.classList.remove('hide');
 .hide {
   opacity: 0;
 }
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="hide" class="comparison">
+            <h3><a href="#hide">Hide</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$(el).hide();
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.style.display = 'none';
 </code></pre>
               </div>
             </div>
@@ -661,23 +661,6 @@ filter(selector, filterFn);
               </div>
             </div>
           </div>
-          <div id="get_attributes" class="comparison">
-            <h3><a href="#get_attributes">Get Attributes</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$(el).attr('tabindex');
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.getAttribute('tabindex');
-</code></pre>
-              </div>
-            </div>
-          </div>
           <div id="find_elements" class="comparison">
             <h3><a href="#find_elements">Find Elements</a></h3>
             <div data-browser="jquery" class="browser jquery">
@@ -695,19 +678,19 @@ filter(selector, filterFn);
               </div>
             </div>
           </div>
-          <div id="get_outer_html" class="comparison">
-            <h3><a href="#get_outer_html">Get Outer Html</a></h3>
+          <div id="get_attributes" class="comparison">
+            <h3><a href="#get_attributes">Get Attributes</a></h3>
             <div data-browser="jquery" class="browser jquery">
               <h4>jQuery</h4>
               <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$('&lt;div&gt;').append($(el).clone()).html();
+                <pre><code>$(el).attr('tabindex');
 </code></pre>
               </div>
             </div>
             <div data-browser="ie8" class="browser ie8">
               <h4>IE8+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.outerHTML
+                <pre><code>el.getAttribute('tabindex');
 </code></pre>
               </div>
             </div>
@@ -725,6 +708,23 @@ filter(selector, filterFn);
               <h4>IE8+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
                 <pre><code>el.innerHTML
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="get_outer_html" class="comparison">
+            <h3><a href="#get_outer_html">Get Outer Html</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$('&lt;div&gt;').append($(el).clone()).html();
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.outerHTML
 </code></pre>
               </div>
             </div>
@@ -1408,37 +1408,6 @@ for (var i = siblings.length; i--;) {
       <section id="events">
         <div class="inner">
           <h2>EVENTOS</h2>
-          <div id="off" class="comparison">
-            <h3><a href="#off">Off</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$(el).off(eventName, eventHandler);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>function removeEventListener(el, eventName, handler) {
-  if (el.removeEventListener)
-    el.removeEventListener(eventName, handler);
-  else
-    el.detachEvent('on' + eventName, handler);
-}
-
-removeEventListener(el, eventName, handler);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie9" class="browser ie9">
-              <h4>IE9+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.removeEventListener(eventName, eventHandler);
-</code></pre>
-              </div>
-            </div>
-          </div>
           <div id="on" class="comparison">
             <h3><a href="#on">On</a></h3>
             <div data-browser="jquery" class="browser jquery">
@@ -1469,6 +1438,37 @@ addEventListener(el, eventName, handler);
               <h4>IE9+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
                 <pre><code>el.addEventListener(eventName, eventHandler);
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="off" class="comparison">
+            <h3><a href="#off">Off</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$(el).off(eventName, eventHandler);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>function removeEventListener(el, eventName, handler) {
+  if (el.removeEventListener)
+    el.removeEventListener(eventName, handler);
+  else
+    el.detachEvent('on' + eventName, handler);
+}
+
+removeEventListener(el, eventName, handler);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie9" class="browser ie9">
+              <h4>IE9+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.removeEventListener(eventName, eventHandler);
 </code></pre>
               </div>
             </div>
