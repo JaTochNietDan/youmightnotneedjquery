@@ -153,14 +153,14 @@ header.page-header .inner h1 {
 }
 @media (min-width: 768px) {
   .browser {
-    float: right;
-    clear: right;
+    float: left;
+    clear: left;
     width: 49%;
   }
   .browser.jquery {
-    float: left;
-    clear: left;
-    margin-right: 2%;
+    float: right;
+    clear: right;
+    margin-left: 2%;
   }
 }
 .old-ie-message {
