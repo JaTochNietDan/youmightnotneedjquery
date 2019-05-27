@@ -1,3 +1,3 @@
-A resource for doing things _au naturel_.
+A resource for doing things ~au naturel~ with jQuery.
 
-### [YouMightNotNeedjQuery.com](http://youmightnotneedjquery.com)
+### [YouMightNeedjQuery.com](http://youmightneedjquery.com)
