@@ -12,17 +12,12 @@ head
   meta(http-equiv='X-UA-Compatible', content='chrome=1')
   meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
 
-  title You Might Not Need jQuery
+  title You Might Need jQuery
 
-  meta(name='description', content='Examples of how to do common event, element, ajax and utility operations with plain javascript.')
-  link(rel='icon', href='http://static.hubspot.com/favicon.ico')
+  meta(name='description', content='Examples of how to do common event, element, ajax and utility operations with jQuery instead of plain Javascript.')
 
   link(rel='stylesheet', href='css/prism.css')
   link(rel='stylesheet', href='css/index.css')
-
-  script(type='text/javascript', src='//use.typekit.net/ghy0wve.js')
-  script(type='text/javascript').
-    try{Typekit.load();}catch(e){}
 
   script(src='js/prism.js')
   script(src='js/index.js')
@@ -31,7 +26,7 @@ body
     header.page-header
       .inner
         h1
-          | You might <span class="highlighted">no</span>t need <span class="highlighted">jQuery</span>
+          | You might <s>not</s> need <span class="highlighted">jQuery</span>
 
       .old-ie-message
         | You certainly can support IE 9 and below without jQuery, but we don't.  Please stop messing with us.
@@ -39,25 +34,10 @@ body
     .explanation
       .inner
         p
-          | jQuery and its cousins are great, and by all means use them if it makes it easier to develop your application.
-
-        p
-          | If you're developing a library on the other hand, please take a moment to consider if you actually need jQuery as a dependency.
-          | Maybe you can include a few lines of utility code, and forgo the requirement.  If you're only targeting more modern browsers,
-          | you might not need anything more than what the browser ships with.
-
-        p
-          | At the very least, make sure you know what <a href="https://docs.google.com/document/d/1LPaPA30bLUB_publLIMF0RlhdnPx_ePXm7oW02iiT6o">jQuery is doing for you</a>, and what it's not.  Some developers believe that jQuery
-          | is protecting us from a great demon of browser incompatibility when, in truth, post-IE8, browsers are pretty easy to
-          | deal with on their own.
-
-    .share-buttons
-
-      .share-button.twitter-share-button
-        iframe(src='http://hubstar.io/twitter/spin?via=HubSpotDev&text=You%20might%20not%20need%20jQuery&url=http://YouMightNotNeedjQuery.com&name=%22You%20might%20not%20need%20jQuery%22', frameborder=0, scrolling=0)
-
-      .share-button.github-stars-button
-        iframe(src='http://hubstar.io/github/spin/HubSpot/YouMightNotNeedjQuery', frameborder=0, scrolling=0)
+          | This page was made in a satirical retort to <a href="http://youmightnotneedjquery.com">https://youmightnotneedjquery.com</a>.
+          | I found the aforementioned page when reading a wonderful <a href="https://arp242.net/jquery.html">blog post</a> and thought
+          | the page must be satire. The examples it gives are to show that you may not need jQuery and instead can opt to use vanilla JS,
+          | except from the examples here it would appear that vanilla JS is far more verbose and awkward to work with on a lot of fronts.
 
     header.search
 
