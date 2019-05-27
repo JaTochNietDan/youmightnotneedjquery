@@ -41,6 +41,14 @@
         </p>
       </div>
     </div>
+    <div class="share-buttons">
+      <div class="share-button twitter-share-button">
+        <iframe src="http://hubstar.io/twitter/spin?via=HubSpotDev&amp;text=You%20might%20not%20need%20jQuery&amp;url=http://YouMightNotNeedjQuery.com&amp;name=%22You%20might%20not%20need%20jQuery%22" frameborder="0" scrolling="0"></iframe>
+      </div>
+      <div class="share-button github-stars-button">
+        <iframe src="http://hubstar.io/github/spin/HubSpot/YouMightNotNeedjQuery" frameborder="0" scrolling="0"></iframe>
+      </div>
+    </div>
     <header class="search">
       <input type="search" placeholder="Search..." required>
       <div class="field">
@@ -652,6 +660,23 @@ filter(selector, filterFn);
               </div>
             </div>
           </div>
+          <div id="find_children" class="comparison">
+            <h3><a href="#find_children">Find Children</a></h3>
+            <div data-browser="jquery" class="browser jquery">
+              <h4>jQuery</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>$(el).find(selector);
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="ie8" class="browser ie8">
+              <h4>IE8+</h4>
+              <div data-lang="javascript" class="code-block language-javascript">
+                <pre><code>el.querySelectorAll(selector);
+</code></pre>
+              </div>
+            </div>
+          </div>
           <div id="find_elements" class="comparison">
             <h3><a href="#find_elements">Find Elements</a></h3>
             <div class="alternatives-block">
@@ -799,23 +824,6 @@ else
               <h4>IE10+</h4>
               <div data-lang="javascript" class="code-block language-javascript">
                 <pre><code>el.classList.contains(className);
-</code></pre>
-              </div>
-            </div>
-          </div>
-          <div id="find_children" class="comparison">
-            <h3><a href="#find_children">Find Children</a></h3>
-            <div data-browser="jquery" class="browser jquery">
-              <h4>jQuery</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>$(el).find(selector);
-</code></pre>
-              </div>
-            </div>
-            <div data-browser="ie8" class="browser ie8">
-              <h4>IE8+</h4>
-              <div data-lang="javascript" class="code-block language-javascript">
-                <pre><code>el.querySelectorAll(selector);
 </code></pre>
               </div>
             </div>
